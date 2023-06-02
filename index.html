@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Movie DB</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap&subset=cyrillic-ext" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__search">
+            <form action="#">
+                <input type="text" placeholder="Axtar">
+            </form>
+        </div>
+        <div class="header__logo">
+            <img src="icons/logo.png" alt="logo" width="100px">
+        </div>
+    </header>
+    <main class="promo">
+        <div class="promo__menu">
+            <nav class="promo__menu-list">
+                <ul>
+                    <li><a class="promo__menu-item promo__menu-item_active" href="#">Kinolar</a></li>
+                    <li><a class="promo__menu-item" href="#">Seriallar</a></li>
+                    <li><a class="promo__menu-item" href="#">Cizgi filmi</a></li>
+                    <li><a class="promo__menu-item" href="#">Kliplər</a></li>
+                    <li><a class="promo__menu-item" href="#">Treylerlər</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="promo__content">
+            <div class="promo__bg">
+                <div class="promo__genre">Komediya</div>
+                <div class="promo__title">MARSLI</div>
+                <div class="promo__descr">YAD PLANETDƏ TƏK BAŞINA YAŞAYAN KOSMANAVT HAQQINDA</div>
+                <div class="promo__ratings">
+                    <span>IMDb: 8.0</span>
+                    <span>Netflix: 7.7</span>
+                </div>
+            </div>
+            <div class="promo__interactive">
+                <div>
+                    <div class="promo__interactive-title">Baxılmış kinolar</div>
+                    <ul class="promo__interactive-list">
+                        <li class="promo__interactive-item">LOGAN
+                            <div class="delete"></div>
+                        </li>
+                        <li class="promo__interactive-item">Titanic
+                            <div class="delete"></div>
+                        </li>
+                        <li class="promo__interactive-item">Bəyin oğurlanması
+                            <div class="delete"></div>
+                        </li>
+                        <li class="promo__interactive-item">Xaç atası
+                            <div class="delete"></div>
+                        </li>
+                        <li class="promo__interactive-item">AVATAR 2
+                            <div class="delete"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <form class="add">
+                        <div class="promo__interactive-title">Yeni film əlavə edin</div>
+                        <span>Filmin adını daxil edin</span>
+                        <input class="adding__input" type="text" placeholder="Artıq baxılıb...?">
+                        <span>Sevimli edək?</span>
+                        <input type="checkbox">
+                        <span class="yes"Bıli!</span>
+                        <button>Təsdiq et</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="promo__adv">
+            <div class="promo__adv-title">Sponsor reklamları</div>
+            <img src="img/2.png" alt="some picture">
+            <img src="img/3.png" alt="some picture">
+            <img src="img/4.png" alt="some picture">
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
