@@ -22,30 +22,7 @@ const movieDB = {
     ]
 };
 
-const reklam = document.querySelectorAll('.promo__adv img');
-const genre = document.querySelector('.promo__genre');
-const bgImg = document.querySelector('.promo__bg');
-const kinolar = document.querySelector('.promo__interactive-list');
 
-genre.textContent = "Drama";
-bgImg.style.backgroundImage = 'url(../img/bg.jpg)';
-
-reklam.forEach(item => {
-    item.remove();
-})
-console.log(kinolar.innerHTML);
-
-kinolar.innerHTML = "";
-
-movieDB.movies.sort();
-
-movieDB.movies.forEach((kino, i) => {
-    kinolar.innerHTML += ` 
-    <li class="promo__interactive-item">${i+1}. ${kino}
-        <div class="delete"></div>
-    </li>
-    `
-})
 
 
 
