@@ -16,6 +16,7 @@ Posterin arxa fon şəkilini "bg.jpg" ilə dəyişin. Şəkil "img" qovluğunda 
 
 'use strict';
 
+
 document.addEventListener('DOMContentLoaded', () => {
     const movieDB = {
         movies: [
@@ -35,17 +36,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const addInput = addForm.querySelector('.adding__input');
     const checkbox = addForm.querySelector('[type="checkbox"]');
 
-    addForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+    addForm.addEventListener('submit', (event) => {
+        event.preventDefault();
 
-        const newFilm = addInput.value;
+        let newFilm = addInput.value;
 
         const favorite = checkbox.checked;
 
-        e.target.reset();
+        if (newFilm) {
+            if (newFilm.length > 21) {
+                newFilm = `${newFilm.substring(0,22)}...`;
+            }
 
+            if (favorite) {
+                console.log("Sevimliyə əlavə edildi");
+            }
+            movieDB.movies.push(newFilm);
+            sortArr(movieDB.movies);
+            createMovieList(kinolar, movieDB.movies);     
+        }
+
+        event.target.reset();
     })
-
 
     const deleteAdv = (del) => {
         del.forEach(i => {
@@ -64,15 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const createMovieList = (film, anaElement) => {
         film.innerHTML = '';
-
-        saytDeyis();
-
+        sortArr(anaElement);
         anaElement.forEach((item, i) => {
             film.innerHTML += `
-                <li class="promo__interactive-item"> ${i + 1}. ${item}
-                    <div class="delete"></div>
-                </li>
-            `
+                    <li class="promo__interactive-item"> ${i + 1}. ${item}
+                        <div class="delete"></div>
+                    </li>
+                `
         });
 
         document.querySelectorAll('.delete').forEach((btn, i) => {
@@ -81,31 +91,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 movieDB.movies.splice(i, 1);
                 createMovieList(film, anaElement);
             })
-        });
+        })
     }
 
     deleteAdv(sekiller);
-    sortArr(movieDB.movies);
+    saytDeyis(); 
     createMovieList(kinolar, movieDB.movies);
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+});
 
 
 
