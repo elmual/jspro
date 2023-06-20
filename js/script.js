@@ -39,9 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
 
         const newFilm = addInput.value;
-
         const favorite = checkbox.checked;
-
         e.target.reset();
 
     })
@@ -65,8 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const createMovieList = (film, anaElement) => {
         film.innerHTML = '';
 
-        saytDeyis();
-
         anaElement.forEach((item, i) => {
             film.innerHTML += `
                 <li class="promo__interactive-item"> ${i + 1}. ${item}
@@ -85,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     deleteAdv(sekiller);
+    saytDeyis();
     sortArr(movieDB.movies);
     createMovieList(kinolar, movieDB.movies);
 })
